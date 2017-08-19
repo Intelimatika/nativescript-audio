@@ -78,6 +78,11 @@ export interface AudioRecorderOptions {
   sampleRate?: any;
 
   /**
+   * Sampling rate conversion quality (IOS Only)
+   */
+  sampleRateConversionQuality?:iosSampleRateConversionQuality
+
+  /**
    * Bit rate
    */
   bitRate?: any;
@@ -98,4 +103,12 @@ export interface AudioRecorderOptions {
    * @returns {Object} An object containing the native values for the info callback.
    */
   infoCallback?: Function;
+}
+
+export enum iosSampleRateConversionQuality{
+  min=0,
+  low=32,
+  medium=64,
+  high=96,
+  max=127
 }
