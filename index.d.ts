@@ -70,6 +70,7 @@ export interface AudioRecorderOptions {
     sampleRate?: any;
     bitRate?: any;
     encoder?: any;
+    sampleRateConversionQuality?:iosSampleRateConversionQuality
 
     /**
      * Callback to execute when playback has an error.
@@ -146,4 +147,10 @@ export declare class TNSRecorder {
     audioRecorderDidFinishRecording(recorder: any, success: boolean): void;
 }
 
-
+export enum iosSampleRateConversionQuality{
+    min=0,
+    low=32,
+    medium=64,
+    high=96,
+    max=127
+  }
